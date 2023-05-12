@@ -9,8 +9,8 @@ module "vpc" {
   cidr = var.vpc_cidr
 
   azs             = var.vpc_azs
-  private_subnets = var.private_subnets
-  public_subnets  = var.public_subnets
+  private_subnets = var.vpc_private_subnets
+  public_subnets  = var.vpc_public_subnets
 
 
   tags = var.tags
@@ -20,7 +20,11 @@ module "vpc" {
 module "ec2-instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   
-  
+  name = "single-instance"
+
+  instance_type          = "t2.micro"
+  key_name               = "user1"
+  # subnet_id              = module.vpc.public_subnets
 }
 
 # # add rds module 

@@ -18,14 +18,14 @@ variable "vpc_azs" {
   
 }
 
-variable "private_subnets" {
+variable "vpc_private_subnets" {
     description = "vpc private subnets"
     type = list(string)
     default = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   
 }
 
-variable "public_subnets" {
+variable "vpc_public_subnets" {
     description = "vpc public subnets"
     type = list(string)
     default = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
@@ -41,8 +41,3 @@ variable "tags" {
     }
   
 }
-# variable "vpc_private_subnets" {
-#   description = "Private subnets for VPC"
-#   type        = list(string)
-#   default     = ["10.0.1.0/24", "10.0.2.0/24"]
-# }
