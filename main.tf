@@ -31,7 +31,7 @@ module "ec2-instance" {
   ami                         = var.ec2_instance_ami
   availability_zone           = module.vpc.azs[0]
   subnet_id                   = module.vpc.public_subnets[0]
-  associate_public_ip_address = true
+  associate_public_ip_address = true 
   tags                        = var.tags
 }
 

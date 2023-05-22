@@ -8,9 +8,9 @@ For this project, the plan is to utilize Terraform for provisioning the necessar
 
 ## Tech Stack
 
-**Cloud Service Provider:** AWS ( VPC, EC2 instances, RDS databases, and load balancers )  
+**Cloud Service Provider:** AWS ( Vpc, Ec2 instances, Rds databases, and load balancers )  
 
-**Infrastructure as Code:** Terrafrom
+**Infrastructure as Code:** Terraform
 
 **Configuration Management:** Ansible
 
