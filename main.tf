@@ -21,13 +21,14 @@ module "vpc" {
 #   vpc_id            = module.vpc
 # }
 
-#TODO: add ec2 module 
+#TODO: inspect ec2 module 
 module "ec2-instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
-  name                        = "single-instance"
-  instance_type               = "t2.micro"
-  ami                         = "ami-0889a44b331db0194"
+  name                        = var.ec2_instance_name
+  depends_on = [ module.vpc ]
+  instance_type               = var.ec2_instance_type
+  ami                         = var.ec2_instance_ami
   availability_zone           = module.vpc.azs[0]
   subnet_id                   = module.vpc.public_subnets[0]
   associate_public_ip_address = true

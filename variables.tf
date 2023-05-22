@@ -1,3 +1,4 @@
+#VPC
 variable "vpc_name" {
   description = "Name for vpc"
   type        = string
@@ -32,6 +33,24 @@ variable "vpc_public_subnets" {
 
 }
 
+#EC2
+variable "ec2_instance_name" {
+  description = "instance name"
+  type        = string
+  default     = "single-instance" #TODO: change this
+}
+
+variable "ec2_instance_type" {
+  description = "instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "ec2_instance_ami" {
+  description = "instance ami"
+  type        = string
+  default     = "ami-0889a44b331db0194"
+}
 variable "tags" {
   description = "tags for project"
   type        = map(string)
